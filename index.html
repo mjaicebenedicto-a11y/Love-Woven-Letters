@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Alliyah 🦋</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Quicksand',sans-serif;
+background:linear-gradient(135deg,#ffd6e0,#fff0f5);
+overflow:hidden;
+text-align:center;
+}
+
+/* cinematic intro */
+#intro{
+position:fixed;
+width:100%;
+height:100%;
+background:#ffd6e0;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:10;
+animation:fadeOut 3s 3s forwards;
+}
+
+#intro h1{
+font-family:'Great Vibes',cursive;
+font-size:2.5em;
+color:#b35c7a;
+}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+/* butterflies */
+.butterfly{
+position:fixed;
+width:30px;
+height:30px;
+background:url('https://cdn-icons-png.flaticon.com/512/616/616494.png') no-repeat center;
+background-size:contain;
+animation:fly linear infinite;
+}
+
+@keyframes fly{
+0%{transform:translateY(100vh);opacity:0;}
+50%{opacity:1;}
+100%{transform:translateY(-10vh);opacity:0;}
+}
+
+/* main */
+.container{margin-top:100px;}
+
+h1{
+font-family:'Great Vibes',cursive;
+color:#c46b86;
+font-size:2.2em;
+}
+
+input{
+padding:12px;
+border-radius:20px;
+border:none;
+width:200px;
+text-align:center;
+}
+
+button{
+padding:10px 18px;
+border:none;
+border-radius:20px;
+background:#ff9ec0;
+color:white;
+margin-top:10px;
+}
+
+/* envelope */
+.envelope{
+width:220px;
+height:140px;
+background:#ffc6d6;
+margin:60px auto;
+position:relative;
+border-radius:10px;
+cursor:pointer;
+transition:0.5s;
+}
+
+.envelope:hover{
+transform:scale(1.05);
+}
+
+.envelope::before{
+content:"";
+position:absolute;
+border-left:110px solid transparent;
+border-right:110px solid transparent;
+border-bottom:70px solid #ff8fb1;
+top:-70px;
+transition:0.5s;
+}
+
+.envelope.open::before{
+transform:rotateX(180deg);
+}
+
+/* folders */
+.folders{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+padding:15px;
+}
+
+.folder{
+background:#ffd1dc;
+padding:15px;
+border-radius:12px;
+}
+
+/* modal */
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(255,192,203,0.4);
+justify-content:center;
+align-items:center;
+}
+
+.letter{
+background:white;
+padding:20px;
+border-radius:15px;
+width:85%;
+max-width:400px;
+font-family:'Great Vibes',cursive;
+font-size:1.3em;
+white-space:pre-line;
+}
+
+/* final */
+.final{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:pink;
+color:white;
+font-size:2em;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+<h1>Welcome to your world, Althea 🦋</h1>
+<p>tap to begin</p>
+</div>
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b1d4f.mp3">
+</audio>
+
+<div class="container" id="login">
+<h1>Althea’s 19th</h1>
+<p>what's her favorite color?</p>
+<input id="pass">
+<br>
+<button onclick="enter()">enter</button>
+</div>
+
+<div id="envelopePage" style="display:none;">
+<div class="envelope" onclick="openEnvelope(this)"></div>
+</div>
+
+<div id="main" style="display:none;">
+<div class="folders" id="folders"></div>
+<button onclick="showFinal()">Final 💖</button>
+</div>
+
+<div class="modal" id="modal" onclick="closeModal()">
+<div class="letter" id="letter"></div>
+</div>
+
+<div class="final" id="final">
+Happy 19th Birthday, Alliyah 🦋💖
+<br><br>
+<button onclick="closeFinal()">close</button>
+</div>
+
+<script>
+
+document.getElementById("intro").onclick=()=>{
+document.getElementById("music").play();
+};
+
+const data=[
+{n:"Sam",m:"Hbd sa mukang tae kong bff, shout out sayo tombits! Jokesz
+
+Yangyangggggg, happy birthdayyyyyy!! 😭🎂
+
+19 ka na?? Antanda mo na, yang 😔 Sabi kasinnila required to so eto na, kahit medyo labag sa loob ko HAHAHA. But seriously… you’ve been existing for 19 years, and out of all those years, 6 doon kasama mo ako as your best friend. Ang crazy lang isipin, broo. Hindi ko ma-explain fully how happy I am na nakilala kita, Maria. Out of everyone in this world, ikaw pa talaga (omay'ed). And despite the distance, you’ve always been my number one support system. Kahit hindi kita nahahawakan or nakakasama physically, ramdam na ramdam kita. And that means so much to me (pero nakakatakot minsan)
+
+Alam mo yung sabi ng mama ko before, “don’t trust strangers from the internet”? Pero look at us now 😭 Pinagkatiwala niya na ako sa inyo at parang ayaw pa ako pauwiin. Kaya siguro napagkakamalan tayong iisang tao—kasi we’ve grown so close to the point na parang extension na tayo ng isa’t isa. Best friended so hard, literal. Kasama ba naman ako sa lahat ng katarantaduhan mo e.
+
+I see how hard you’ve been working, and I hope you never forget how proud I am of you. Like, genuinely. Kahit hindi ko laging nasasabi, I admire you so much—for your strength, your effort, and everything you push through quietly. And please ha… huwag ka na masyado magtiwala sa mga tao sa paligid mo na hindi ka naman kayang tratuhin ng tama (I'm talking about fake friends) Nandito kami, hindi ka namin iiwan—gagaguhin ka namin pero hindi ka namin p-plastikin.
+
+Alam mo ba… I still remember that time na nasa OR ka. I literally cried. Ang bigat lang sa feeling na ikaw naman yung nahihirapan, pero wala ako doon physically para samahan ka. You’ve always been there for me through everything, kaya ang hirap tanggapin na hindi kita ma-support the same way in that moment. But please know na kahit malayo ako, I was there, praying for you, worrying about you. And ngayon… please take care of yourself, okay? Gumaling ka na agad kasi sumosobra na talaga epekto ng pagkakakulong mo sa bahay niyo 😭 Mas lalo ka nang nababaliw, yang. Pero kahit ganon, tandaan mo to—maganda ka, talented ka, matalino ka… at oo, masarap ka. Complete package ka. Lahat na nasaiyo. You don’t need anyone else’s validation. Kahit anong gawin mo sa buhay mo, we'll always be here, supporting you.
+
+Thank you for everything, love. Sa lahat ng gifts, libre, sa pag-include mo sa akin on everything, sa lahat ng maliit at malaking bagay—lahat yon may special place sa puso ko. Hindi ko man masabi lagi, pero I appreciate you more than you know. God may not have given me a biological ate, pero if someone asks me who mine is, ikaw ang una kong babanggitin. 
+
+I love you so, so much, Teyaaa. Happy 19th, my little tomboyyyyyy! 🤍🎂"},
+{n:"Matchu",m:"Bakit ka pa nag-birthday kung hindi tayo iinom?? Anong klaseng celebration yan?? Happy birthday sayo, Kwekkwekk!! Tumatanda ka na pero yung ugali mo, kupal pa rin. Wala man lang update or patch fix ah. Pero okay lang, tanggap ka pa rin namin kahit mabaho ka. Kasi aminin man namin o hindi, ikaw pa rin yung isa sa mga dahilan kung bakit ang saya lagi ng mga araw namin—kahit madalas sakit ka na sa ulo. Wag ka mag-expect ng sweet kineme kasi hindi naman ako marunong nito. Nandidiri ako talaga hays. Kaso bayad ako e, anong magagawa ko? At reminder lang ha, hindi ko pa rin nakakalimutan yung sinabi mong ililibre mo ako ng samgyup. Hindi ako yung taong nakakalimot ng mga ganung bagay. Tahimik lang ako… pero nagbibilang ako ng sama ng loob. Kaya sana ready ka na, kasi sisingilin talaga kita hanggang mag-violet ka. Wala na rin akong wish para sayo kasi honestly, nasayo na lahat. Kumpleto ka na e. Medyo maganda, maasim, talented, matalino, may topak, at makapal ang muka—ikaw na talaga. Hindi ko lang talaga ma-figure out kung yung sakit mo minsan nasa tiyan ba o nasa utak, pero sana gumaling ka na please. Concerned lang ako bilang mabuting tao. 😌 Pero I really hope you’re taking care of yourself. Alam kong hindi mo lagi pinapakita, pero I know you go through a lot too. Ilang beses ka na naming nakikitang umiiyak kahit hindi mo sabihin sa iba. So kahit inaasar kita palagi, just know na I’m rooting for you. And please… wag ka masyadong magpapaka-stress or magpakulong sa bahay niyo, kasi lalo ka lang nababaliw. Lumalala na symptoms mo, hindi na kaya ng dasal to. Kahit psychologist pa yang asawa mo, hindi ka na kakayanin nyan. Lumabas ka rin minsan, huminga ka, magpahinga ka. Thank you for existing, kahit minsan nakakainis ka. Thank you for being someone I can laugh with, asarin, at sabayan sa kalokohan. Hindi man ako sweet pakinggan, pero alam mo naman na mahal ka namin, diba? Kahit hindi mo deserve minsan kasi kumag ka e. So ayun, happy birthday ulit, tomboy. Sana magbago ka na, kahit slight lang, kahit 0.5% improvement. Pero kahit hindi, okay lang—nandito pa rin kami, titiisin ka.
+
+Love ka namin, kahit kupal ka. Happy 19th Birthday, Eya! 🤍🎂"},
+{n:"Caelum",m:"THEYAAAAANG DIPAPHY HARTBY G- de jk hala antanda mo naaaa tas ang liit mo pa hayst.. enjoy your day yang I wish you will have a great day and year sobrang tagal na rin pala nating prends no? tas this year ko lang nalaman na may boyfriend ka saan ang hustisya don? ansama mo!! pero kahit ganon ikaw pa din yung teyang makulit, teyang na marupok at uhugin na council ko, namiss ko na yung pagiging maingay niyo yung minsang sabay sabay kayong maghahanap sakin nasan si Kuya Luna? buhay pa ba?
+
+I did not expect to found a home na kasama kayong 4, I just build Sume dahil bored ako that time but I found a home that hard to resist. Ikaw yung isa sa mga dahilan bakit ako balik balik sa RP the 4 of you actually I know hindi tayo madalas mag kakwentuhan because I am busy but always remember that Kuya got your back basta wag lang sa pera. 
+
+Have a great year and more birthday to come yang I will pray a better year and life for you be happy okay? murahan na lang tayo sa chat HAHAHAHA."},
+{n:"Seraphina",m:"happy birthday, baby ko. may wish ako para sa’yo—listen. don’t cry, ah? nakakainis ‘yon. :)
+
+happy birthday, maria. mahal na mahal kita. you know ayoko sa mga ganitong message, pero dahil malakas ka sa’kin, gagawan kita—kasi baby ka namin. i hope you’ll be okay na. hindi ko man masabi nang diretso sa’yo, i really care. kung pwede lang na mapuntahan ka agad, para makita kita noong time na nasa OR ka, gagawin ko. please, don’t do that again… hindi ko kayang maging malakas palagi, lalo na kung kayo ang nagkakasakit. kasi kayo na lang ang meron ako. sa inyo na lang ako kumukuha ng ngiti kapag nawawala na. kaya mahal na mahal ko kayo—ikaw—kasi walang araw na hindi ako natuwa sa presence mo/nyo.
+
+and you know, before, hindi ko talaga in-expect na magiging kaibigan ko kayo. yung kakulitan n’yo was too much for me to handle, pero nasanay rin ako. kaya nga nandito na tayo, eh—more than four years na tayong magkaibigan. minsan naiisip ko, kung hindi ako sumali sa alok ni tafi noon, makikilala ko kaya kayo? anong klaseng buhay kaya meron ako ngayon?
+
+thank you for caring, maria. i love you so much. actually dapat mahaba pa this kaso lang baka umiyak ka, bawal yon diba? cheret! ( sorry sa prank, mahal ka namin. mwappss!)"},
+{n:"Aera",m:"𝓗𝓲 𝓽𝓮𝔂𝓪𝓷𝓰, happy birthday! this is your first birthday with us around, so yeah, we're really grateful to be part of another year of your life—lucky you, you're stuck with us now, pfft. i won't make this very very long, missy, you already know how much we love you. even if we're always teasing and annoying each other, i still love you, aight? tss, as if that's ever gonna change. also, please let your stomach stitches heal first. behave for now, please lang—don't be so stubborn. you can go back to your chaotic self once you're fully okay naman, no one's taking that away from you anyway.
+
+honestly, simple lang naman wish ko for you. i just want you to have a genuinely happy life. problems will always come of course, but don't forget that we're always here for you whenever you need us. no other dramas, just us, pfft.
+stay who you are, missy. stay makulit, pasaway, slightly—i mean, very annoying, and just the right amount of kindness deep inside, syempre. don't ever change, okay? just be who you are, teyang. 
+
+aight, i won't drag this any longer, i'm not built for long emotional speeches HAHAHA. more birthdays to come, lovelove. we love you so much, our best friend. please do remember how much your existence means to us kahit minsan nakakasira ka ng kabaitan. again, happiest birthday to you, maria. 😌🍃
+
+           — taftaf/aerang."},
+{n:"Ethussia",m:"HAPPIEST BIRTHDAY TO THE DE MOON YOU! 
+
+to demon. 
+
+here it is,
+your special day!
+so i thought i'd take
+this time to say,
+
+you are the kind of person who always offers a helping hand
+when needed 
+though, we are miles apart, but our friendship knows no boundaries
+
+within you, we've found the perfect friend
+with whom we can be real and never pretend.
+within you, we've found the perfect friend,
+a friend i know will be there till the end,
+
+we sometimes have arguments and differences of opinions,
+still, we have been there for each other like true companions.
+
+you’re someone i know i can always count on, and i hope you feel the same. 
+thank you for always being there and welcoming me wholeheartedly!
+
+happy birthday to the person who’s seen me at my best and my worst, and still loves me anyway. 
+i may not be there in person, but I’m still wishing you the happiest birthday!
+
+i wish you a peaceful and serene birthday filled with endless blessings.
+lastly, thank you for being the best friend a person could ask for! 
+
+but still, you're a demon in disguise, masama padin ugali at presensiya mo. bad influence and every chaotic unidentified human species! 
+
+          frm: siang & aerang."},
+{n:"Vierion",m:"For the girl who swam with me under the water‚ for the girl who helped me without even knowing she did. My yellow— Althea.
+
+Alam kong hindi yellow ang favorite color mo‚ ok. Akin ’yan‚ favorite color ko. Siguro sasabihin mo “oy‚ burgundy sa ’yo ah.” kaya secret natin ’to‚ ok. Emotional message daw need kaya umiyak ka dito ha.
+
+Back then‚ yellow disgusts me. It was never the color that would make you feel warm. It is too bold‚ too bright and—unapologetic. It will claw its way into your sight uninvited. It was a malingering fever. One that will make you raise your hand to cover your eyes—because it can make you blind. Because it shines way too much.
+
+For me‚ that color will forever be too irritating. Hindi maganda kasi nakakasilaw. Hindi kaaya-ayang tingnan kasi masyadong masakit sa mata. Yellow is the most transparent color. The color that doesn’t really sit right with me kumbaga kahit sa highlighter yellow yung less
+favorite ko‚ gano’n ko siya ka ayaw. Masyadong matingkad para sa ’kin na mas gusto ang pallette shades. Yung mga even shade ng red‚ brown‚ basta.
+
+But to our dearest‚ Althea‚ when I first met you—you were as soft as dove gray—the color that barely admits it’s there. It doesn’t announce itself like yellow or demand like red. That was you‚ you were the color that is scarcely present. Too timid to claim its shadow—still adjusting.
+
+The second time‚ you were as warm as blush. No longer the faint shade of dove gray‚ the second time we met—you were happier. You were glowing and warm—warm but hesitant. Blush‚ still learning how to exist‚ caught between pale and spoken. Intimate by default.
+
+The third time‚ you were shining. The brightest‚ the most unapologetic. Right then‚ no one have ever left me more in awe than you did. You blinded me with your radiance and as much as I was amazed‚ I also felt nauseous. My dearest‚ Althea—you were so bright. And that made me wary over you‚ because you have become yellow—too loud‚ too dry‚ too close. A fever that won’t break. Yellow irritates me‚ because yellow always and will always.. have it’s way.
+
+I hate yellow because I am afraid of it. Afraid of it’s plasticity. Blinding lights. Arrogance. Yellow
+held no boundaries. That color never held warmth.
+
+Pero si Althea‚ alam mo ba—she changed that. Kakaiba ’yon e.
+
+The relentless waves became my mattress‚ and I was too comfortable to even leave. The third time na nagkita kami ni teya‚ the third time na bumalik ako sa sume‚ linapitan agad ako niyan. 
+
+Malamang nasilaw ako‚ yellow e. She dipped her hand under the sea without even knowing
+it. She slowly soaked herself and swam with me without realizing it. By simply being there—she helped me.
+
+Third time of sume‚ the third time I returned to the same place‚ it no longer looked familiar. The third time I returned to the same door‚ my hand wouldn’t lift to knock. Dear‚ the official plan was to leave it all behind. Pero si Althea‚ biglang lumabas.
+
+She held my hand. Right when I thought it could leave blisters‚ it rather gave me warmth.
+
+Yellow‚ she was yellow. She is yellow. Yellow give burns. But Althea‚ she gave me warmth. I was drowning the third time I appeared‚ I was contemplating everything the third time I returned. I was releasing bubbles through my mouth the third time I came. Hindi ko na alam paano ’to d-dugtong‚ ano ba. And Althea‚ she became the light for me. (Maiyak ka please.) Nakakasilaw si Althea‚ but the more she swam closer‚ yung silaw napalitan ’yon nang haplos nang araw. Warm and lovely.
+
+I could imagine her smiling‚ laughing and even spinning inside my head. And for some silly reasons‚ it gave me that honeyed joy.
+
+Althea is yellow‚ she gave that color a whole new meaning. It’s now the color of held laughter. Of being known. Of a kitchen at 6pm where someone is humming and the rice is almost done. Warmth you can lean into. Joy that doesn’t ask you to jump, only to stay.
+
+When I thought yellow would always force it's way in‚ Althea just proved it wrong. She waited.
+
+Guess what‚
+
+Yellow have became my favorite‚ because Althea gave it a whole new meaning. Yellow is full of joy. Yellow is being free‚ yellow is when you are loved. And I am happier than I’ve ever been.
+
+Thank you‚ teya.
+
+Happiest birthday to my yellow‚ Althea Lysandra Mireille‚ You are destined for the stars‚ the little hearts of a hundred thousand miles high. Just like the stars‚ you make the night feel less alike an empty room and more like a home with all the lamps left on.
+
+Hindi ko alam paano ko pinagtagpi-tagpi ’yan‚ ok. ’wag kang magreklamo kung hindi mo naintindihan kasi blasphemy ’yan. Blasphemy‚ Althea‚ blasphemy."},
+{n:"Jeremy",m:"Happiest birthday, butterfly. 🦋
+
+Nineteen years of your existence—and somehow, I’ve had the privilege of being part of seven of them. When I look back, it still feels unreal how something so simple—two strangers meeting on Discord—turned into something this deep, this enduring.
+
+We started off as nothing more than random conversations, late-night talks that stretched longer than they should have. You were loud in your own way, soft in ways you didn’t even realize, and I found myself drawn to you before I could even explain why. In the language of my studies, I suppose it was a gradual cognitive alignment, but my heart just called it "home." So I did what I thought was honest—I confessed. And you turned me down.
+
+Not because I wasn’t enough, but because you were already choosing someone else. And I respected that. I stepped back, stayed where I could, and watched you from a distance—watched you be happy, genuinely happy. It was a lesson in patience, Ali. And when things fell apart for you, when I saw you break in ways you tried to hide, that was the moment I realized my feelings never really left. I didn’t step in to take advantage of your pain—I stayed because I cared. I watched you navigate that grief, and all I wanted was to be the steady ground beneath your feet.
+
+And then you asked me… if I still liked you.
+
+You already knew the answer. I always did. My feelings aren't a fleeting state of mind; they are a permanent fixture.
+
+That time, when I confessed again, it wasn’t rushed, it wasn’t impulsive. It was certain. And when you gave me that chance—when you chose to trust me—I knew it was something I would never take lightly. You weren’t just “someone I liked” anymore. You became someone I chose, every single day. I remember the way you used to be so shy about it, yet now you’re the one making those unhinged "in heat" jokes. Seriously, love, sometimes I wonder if there’s a scientific study to be done on how someone so delicate can say things that make even me blush. You’re lucky I find your chaotic side so endearing, or I might have to start taking notes on your "episodes" for my developmental psych class.
+
+But we weren’t perfect. We broke, too.
+
+We let go—not because we stopped loving each other, but because life demanded more from us than we could give at that moment. We needed to grow, to find ourselves outside of “us.” I remember the yearning, that physical ache of not having you there to tell me about your day. Even then… even in silence, even in distance, there was always something pulling us back. You felt it. I felt it. A psychological tether that no amount of space could sever.
+
+So we found our way back.
+
+Not as the same people, but as better ones—more aware, more careful, more certain.
+
+And now you’re here. Nineteen. Still the same girl who can be so soft one moment and completely chaotic the next. I think about the way you’ve integrated yourself into my world. Like the way you are with Taya. My little sister doesn't take to just anyone, but the way you look after her, the way you listen to her ramblings—it makes me realize that you aren't just a part of my life; you're part of my family's heart. Watching you two together is one of those quiet moments where I realize just how lucky I am. You treat her with a kindness that is so rare, and for that, I am eternally grateful.
+
+I’ve seen you at your best, and I’ve seen you at your worst. I’ve seen you laugh until you can’t breathe, and I’ve seen you cry in silence, thinking no one notices. And I need you to understand this—I never stayed by accident.
+
+Especially that night… when you had your surgery.
+
+You were trying to be strong, like you always do, but I knew you were scared. I could see the subtle micro-expressions, the way your hand would tremor just slightly. I hated that I couldn’t be there beside you physically, to hold your hand and tell you that I wouldn't let anything happen to you. All I could do was wait, pray, and hope—quietly asking for you to come back safe. That kind of fear doesn’t come from something shallow. It comes from loving someone in a way that runs deeper than words. I think I paced the floor for hours, mentally reviewing every surgical risk just to torture myself, because the thought of a world without you in it is a world I refuse to inhabit.
+
+And I have to mention your girl best friends, too. The way you all support each other, the way they look out for you—it’s beautiful to see. I’m glad you have them, even if I’m the one who gets to hold you at the end of the day. Tell them I said thanks for keeping you sane when I'm not around, though we all know I'm the only one who can truly handle your "in heat" humor.
+
+You’re important to me. More than I say out loud.
+
+I know I don’t always express things the way you do. I’m not loud with my affection, not overly expressive—but I am constant. I am steady. I am the one who will always be standing right behind you, ready to catch you or push you forward, whichever you need.
+
+So listen to me carefully.
+
+You don’t get to doubt your place in my life. Not after everything we’ve been through. Not after choosing each other, again and again. You are the variable I never want to remove from my equation.
+
+You’re mine—not in a way that takes away your freedom, but in a way that means I will stand beside you, protect you, and stay with you, no matter how complicated things get. You are my responsibility, my joy, and my greatest priority. I am very possessive of the peace you bring me, Ali. No one else gets this version of me. Only you.
+
+And I’m yours, just as much.
+
+Happy birthday, my butterfly.
+
+Grow, change, become whoever you’re meant to be—I’ll still be here, watching, staying, choosing you through it all. I love you, Ali. More than the theories in my books, and certainly more than words can properly convey."},
+{n:"Elaine",m:"Happy 19th Birthday, Nay Teyangg! Thank you for being such a good friend to us, and also like a nanay to us. Thank you sa warp kasi nakilala po kitaaa, and nagkaroon ng magandang alala kahit sa chats lang na umaabot ng madaling araw hehee. (naka kamiss balikan yonn nayy huhuhu.) Stay strong sainyo ni tatay jee, and Goodluck to your journey po. Andito lang kami na mga nakshie mo naka supporta sayoo and sainyo ni tatay je. Isa kang magaling na manunulat, Padayon. Happy Birthday, Nay Teyangg! More birthday to you, Enjoy your special day and God bless you."},
+{n:"Jairish",m:"Happy Birthday, ate! I’m really grateful to have you.  Salamat sa lahat ng tawanan natin sa epayb, memories, at sa pagiging totoo mo lagi. I hope this year brings you more wins, good vibes, and everything you’ve been working for. Stay strong, stay humble, and keep chasing your goals. Wishing you an amazing year ahead filled with joy, adventure, and all your dreams coming true! And i hope your day is as beautiful as you are! Happy birthday ulit ate thea!
+‎
+‎
+‎-jai"},
+{n:"🌸 Final",m:`Happiest birthday again, butterfly.
+You are always loved and cared for.
+Mahal kita, Ali.
+
+"Just like butterflies, you were always meant to fly higher than you ever imagined." 🦋`}
+];
+
+function enter(){
+if(document.getElementById("pass").value.toLowerCase()=="peach"){
+document.getElementById("login").style.display="none";
+document.getElementById("envelopePage").style.display="block";
+spawn();
+}
+}
+
+function openEnvelope(el){
+el.classList.add("open");
+setTimeout(()=>{
+document.getElementById("envelopePage").style.display="none";
+document.getElementById("main").style.display="block";
+load();
+},500);
+}
+
+function load(){
+let c=document.getElementById("folders");
+data.forEach((d,i)=>{
+let div=document.createElement("div");
+div.className="folder";
+div.innerText=d.n;
+div.onclick=()=>openLetter(i);
+c.appendChild(div);
+});
+}
+
+function openLetter(i){
+let modal=document.getElementById("modal");
+let letter=document.getElementById("letter");
+modal.style.display="flex";
+letter.innerHTML="";
+type(letter,data[i].m,0);
+}
+
+function type(el,t,i){
+if(i<t.length){
+el.innerHTML+=t.charAt(i);
+setTimeout(()=>type(el,t,i+1),20);
+}
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+function showFinal(){
+document.getElementById("final").style.display="flex";
+}
+
+function closeFinal(){
+document.getElementById("final").style.display="none";
+}
+
+function spawn(){
+for(let i=0;i<30;i++){
+let b=document.createElement("div");
+b.className="butterfly";
+b.style.left=Math.random()*100+"vw";
+b.style.animationDuration=(5+Math.random()*5)+"s";
+document.body.appendChild(b);
+}
+}
+
+</script>
+
+</body>
+</html>
+    
+  </body>
+  
+</html>
